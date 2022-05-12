@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         LoadBalancer lb = new LoadBalancer(new RoundRobinStrategy());
         //registration
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i <= 4; i++) {
             lb.register(new Provider());
         }
         lb.startHealthCheck();
@@ -22,7 +22,7 @@ public class Main {
         requestSimulation.start(5);
 
         Scanner console = new Scanner(System.in);
-        System.out.println("Enter command: get, register {x}, unregister {x}, stop");
+        System.out.println("Enter command: get, reg {x}, unreg {x}, exit");
         System.out.println();
 
         String input;
